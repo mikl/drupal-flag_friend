@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Panels content type that shows the number of friends of a given user.
@@ -27,8 +26,8 @@ function flag_friend_flag_friend_count_content_type_render($subtype, $conf, $pan
   }
   // $context in this case is a user context, so we can get the user object
   // from it and put it into $account.
-
   $account = isset($context->data) ? clone $context->data : NULL;
+
   // Make a new empty "block" which will be a Pane you can add to your Panel.
   $block = new stdClass();
   if ($account) {
@@ -47,8 +46,8 @@ function flag_friend_flag_friend_count_content_type_render($subtype, $conf, $pan
 /**
  * Empty form so we can have the default override title.
  */
-function flag_friend_flag_friend_count_content_type_edit_form(&$form, &$form_state) {
-  // Does nothing!
+function flag_friend_flag_friend_count_content_type_edit_form($form, &$form_state) {
+  return $form;
 }
 
 function flag_friend_flag_friend_count_content_type_edit_form_submit(&$form, &$form_state) {
